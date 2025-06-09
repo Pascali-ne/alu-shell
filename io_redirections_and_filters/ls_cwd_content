@@ -1,5 +1,5 @@
 total 56
-drwxrwxr-x 2 caline caline 4096 Jun  9 12:10 .
+drwxrwxr-x 2 caline caline 4096 Jun  9 12:21 .
 drwxrwxr-x 6 caline caline 4096 Jun  2 15:04 ..
 -rwxrwxr-x 1 caline caline   32 Jun  5 11:44 0-hello_world
 -rwxrwxr-x 1 caline caline   30 Jun  5 12:15 1-confused_smiley
@@ -9,8 +9,8 @@ drwxrwxr-x 6 caline caline 4096 Jun  2 15:04 ..
 -rwxrwxr-x 1 caline caline   29 Jun  5 13:52 5-firstlines
 -rwxrwxr-x 1 caline caline   38 Jun  9 11:06 6-third_line
 -rwxrwxr-x 1 caline caline   83 Jun  9 11:25 7-file
--rwxrwxr-x 1 caline caline   36 Jun  9 12:05 8-cwd_state
+-rwxrwxr-x 1 caline caline   37 Jun  9 12:21 8-cwd_state
 -rw-rw-r-- 1 caline caline   12 Jun  9 11:25 \*\\'"Best School"\'\\*$\?\*\*\*\*\*:)
 -rwxrwxr-x 1 caline caline   41 Jun  6 16:46 iacta
--rw-rw-r-- 1 caline caline    0 Jun  9 12:10 ls_cwd_content
+-rw-rw-r-- 1 caline caline    0 Jun  9 12:21 ls_cwd_content
 -rw-rw-r-- 1 caline caline   17 Jun  5 11:57 README.md
