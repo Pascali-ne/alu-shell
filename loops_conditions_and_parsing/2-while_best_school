@@ -1,0 +1,7 @@
+#!/usr/bin/env bash
+# this is displaying of "Best School"10times using a while loop
+count=1
+while [ "$count" -le 10 ]; do
+     echo "Best School"
+     count=$((count + 1))
+done
