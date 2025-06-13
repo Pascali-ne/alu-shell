@@ -1,14 +1,18 @@
 #!/usr/bin/env bash
-# this display Best School 10times displays bad luck for the 4th and good luck for the 8th loop
+# This script displays "Best School" 10 times,
+# "bad luck" for the 4th iteration,
+# and "good luck" for the 8th iteration.
+
 i=1
 while [ $i -le 10 ]
 do
-if [$i -eq 4 ]; then
-   echo "bad luck"
-elif [$i eq 8 ]; then
-     echo "good luck"
-else
-   echo "Best School"
-fi
-i=$((i + 1))
+  if [ $i -eq 4 ]; then
+    echo "bad luck"
+  elif [ $i -eq 8 ]; then
+    echo "good luck"
+  else
+    echo "Best School"
+  fi
+  i=$((i + 1))
 done
+
