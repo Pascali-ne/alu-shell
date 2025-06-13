@@ -1,18 +1,16 @@
 #!/usr/bin/env bash
-# This script displays time from hour 0 to 12 and minutes from 1 to 59
+# Lists files and prints part after the first dash, or full name if no dash
 
-hour=0
-while [ $hour -le 12 ]
-do
-  echo "Hour: $hour"
-  
-  minute=1
-  while [ $minute -le 59 ]
-  do
-    echo "$minute"
-    minute=$((minute + 1))
-  done
+for file in *; do
+  # Skip if it's not a regular file (optional, remove if directories should be included too)
+  [ -f "$file" ] || continue
 
-  hour=$((hour + 1))
+  if [[ "$file" == *-* ]]; then
+    # Print everything after the first dash
+    echo "${file#*-}"
+  else
+    # Print full name if no dash
+    echo "$file"
+  fi
 done
 
