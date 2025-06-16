@@ -1,3 +1,11 @@
 #!/usr/bin/env bash
-#apache codes
-awk '{print $1,$9}' apache -access.log | sort -	V | uniq -c | sort -n | perl -e 'print reverse <>'
+# 14-dig_the-data
+
+awk '{ count[$1, $9]++ }
+     END {
+         for (key in count) {
+             split(key, parts, SUBSEP);
+             printf "%8d %s %s\n", count[key], parts[1], parts[2];
+         }
+     }' access.log | sort -rn
+
