@@ -1,11 +1,10 @@
 #!/usr/bin/env bash
-# This script groups Apache log entries by IP and HTTP status code
+# Display count of IP and HTTP code combinations from Apache log
 
-awk 'NF >= 9 { count[$1, $9]++ }
+awk 'NF >= 9 { key = $1 " " $9; count[key]++ }
      END {
-         for (key in count) {
-             split(key, parts, SUBSEP)
-             printf "%8d %s %s\n", count[key], parts[1], parts[2]
+         for (k in count) {
+             print count[k], k
          }
-     }' access.log | sort -rn
+     }' "${1:-access.log}" | sort -rn
 
