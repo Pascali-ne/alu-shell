@@ -1,0 +1,12 @@
+#!/usr/bin/env bash
+#bash script that writes 'I am alive!' indefinitely to 'my_process' filecase "$1" in
+case
+start) start ;;
+   stop)  stop;;
+   restart) restart;;
+   *) echo "Usage: manage_my_process {start|stop|r\
+estart}"                                          
+
+      ;;
+esac
+root@1bbbe08af674:~/ALU_Intranet/alu-shell/processes_and_signals#
