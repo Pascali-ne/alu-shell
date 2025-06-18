@@ -1,4 +1,10 @@
 #!/usr/bin/env bash
+# Kill the 7-highlander process
+
+pkill -SIGKILL -f "./7-highlander"
+
+root@45e42813506a:/alu-shell/processes_and_signals# cat 10-process_and_pid_file 
+#!/usr/bin/env bash
 # This script creates a PID file, loops printing a message, and handles signals to clean up and exit properly.
 
 PIDFILE="/var/run/myscript.pid"
@@ -22,3 +28,34 @@ while true; do
   echo "To infinity and beyond"
   sleep 2
 done
+
+root@45e42813506a:/alu-shell/processes_and_signals# cat 11-manage_my_process 
+#!/usr/bin/env bash
+# Script to manage the 'manage_my_process' background process
+
+case "$1" in
+  start)
+    nohup ./manage_my_process > /dev/null 2>&1 &
+    echo $! > /var/run/my_process.pid
+    echo "manage_my_process started"
+    ;;
+  stop)
+    if [ -f /var/run/my_process.pid ]; then
+      kill "$(cat /var/run/my_process.pid)" >/dev/null 2>&1
+      rm -f /var/run/my_process.pid
+    fi
+    echo "manage_my_process stopped"
+    ;;
+  restart)
+    if [ -f /var/run/my_process.pid ]; then
+      kill "$(cat /var/run/my_process.pid)" >/dev/null 2>&1
+      rm -f /var/run/my_process.pid
+    fi
+    nohup ./manage_my_process > /dev/null 2>&1 &
+    echo $! > /var/run/my_process.pid
+    echo "manage_my_process restarted"
+    ;;
+  *)
+    echo "Usage: manage_my_process {start|stop|restart}"
+    ;;
+esac
